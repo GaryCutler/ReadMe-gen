@@ -36,10 +36,10 @@ const questions = [
         message: 'enter the testing instructions'
     },
     {
-        type: 'checkbox',
+        type: 'list',
         name: 'license',
         message: 'Which license should your project have? (Choose one)',
-        choices: ['Apache2', 'MIT', 'GNUGPLv3', 'GNUGPLv2', 'ISC']
+        choices: ['Apache2', 'MIT', 'GNUGPLv3', 'AGPLv3']
     },
     {
         type: "input",
@@ -69,7 +69,7 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then((data) => {
-        writeToFile("README.md", data);
+        writeToFile("Generated-README.md", data);
     });
 }
 
